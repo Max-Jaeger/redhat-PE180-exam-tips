@@ -30,7 +30,7 @@ This repository will cover the common problems that face people during the PE180
 
 Depending on your geo location and internet connection stability/speed, you may find the exam's virtual remote environment to be laggy and unstable. I personally experienced multiple disconnects and very slow UI response which hindered my performance in the exam. Below are some tips that might help you and boost your workflow.
 
-1. Maximize all the windows and switch between them using alt + tab
+1. **Maximize all the windows and switch between them using alt + tab**
 
     Switching between the terminal and the exam instructions with your mouse wastes a lot of time since the mouse is very buggy and laggy and will have some delay to follow the trail of your real mouse. I suggest you maximize all your screens and switch between them using alt + tab.
 
@@ -44,7 +44,26 @@ Depending on your geo location and internet connection stability/speed, you may 
 <p align="center">
     <img width="70%" src="imgs/alt_tab.gif">
 </p>
+<br>
 
+2. **Use gedit for editing text files (dockerfiles and shell scripts)**
+
+    Throughout the exam, you will be asked to edit dockerfiles and shell scripts. Use gedit to create/modify these files. gedit is a GUI-based text editor that will make your workflow much easier compared to vim or nano. To use it, type the following in ur terminal:
+
+        gedit <filename>
+    
+    This will open the file you specified in the command. gedit will allow you to use the normal saving/copying/pasting shortcuts we all know. Check the gif below for reference.
+
+    *Hint: You can use CTRL + S to save then CTRL + Q to close the gedit. This will save you some time.*
+
+<p align="center">
+    <img width="70%" src="imgs/gedit.gif">
+</p>
+<br>
+
+3. **Use [CTRL + Shift + C] and [CTRL + Shift + V] to copy and paste inside the terminal**
+
+    You should use copy and paste as much as you can in this exam. It's full of long container image names, environment variables and long dockerfile commands. In the browser and gedit, you can use the normal **CTRL + C** and **CTRL + V**. But in the terminal, they don't work so make sure you use **CTRL + SHIFT + C** and **CTRL + SHIFT + V**. This way you won't have to spend much time writing long commands and instructions manually. It will also save you from typos!
 
 
 ## Exam & Solving Strategy
