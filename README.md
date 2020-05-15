@@ -28,6 +28,23 @@ This repository will cover the common problems that face people during the PE180
 
 ## Environment Issues
 
+Depending on your geo location and internet connection stability/speed, you may find the exam's virtual remote environment to be laggy and unstable. I personally experienced multiple disconnects and very slow UI response which hindered my performance in the exam. Below are some tips that might help you and boost your workflow.
+
+1. Maximize all the windows and switch between them using alt + tab
+
+    Switching between the terminal and the exam instructions with your mouse wastes a lot of time since the mouse is very buggy and laggy and will have some delay to follow the trail of your real mouse. I suggest you maximize all your screens and switch between them using alt + tab.
+
+    Note that RHEL has no maximize button, so in order to maximize, you can double click the top bar of any windows and it will maximize.
+
+<div style="display: flex; flex-direction: row;">
+<p style="flex: 1; padding: 5px;" align="center">
+    <img src="imgs/img_1.gif">
+</p>
+<p style="flex: 1; padding: 5px;" align="center">
+    <img src="imgs/img_2.gif">
+</p>
+</div>
+
 
 
 ## Exam & Solving Strategy
