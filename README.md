@@ -1,8 +1,12 @@
 # Red Hat PE180 Exam Tips
 
-<p align="center" style="margin-top: 50px; margin-bottom: 50px;">
+<br>
+
+<p align="center">
     <img style="width: 300px;" src="imgs/redhat-logo.png">
 </p>
+
+<br>
 
 This repository will provide you with tips and tricks to help you pass the PE180 Red Hat Preliminary Exam in Containers, Kubernetes, and Openshift. 
 
