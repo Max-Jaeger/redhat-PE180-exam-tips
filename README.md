@@ -22,8 +22,8 @@ This repository will cover the common problems that face people during the PE180
 1. [Overview](#Red-Hat-PE180-Exam-Tips)
 2. [Environment Issues](#Environment-Issues)
 3. [Exam & Solving Strategy](#Exam-&-Solving-Strategy)
-4. [Commands Needed](#Commands-Needed)
-5. [Hidden Tricks](#Hidden-Tricks)
+4. [Hidden Tricks](#Hidden-Tricks)
+5. [Commands Needed](#Commands-Needed)
 6. [Conclusion](#Conclusion)
 
 ## Environment Issues
