@@ -3,7 +3,7 @@
 <br>
 
 <p align="center">
-    <img style="width: 300px;" src="imgs/redhat-logo.png">
+    <img width="300px" src="imgs/redhat-logo.png">
 </p>
 
 <br>
