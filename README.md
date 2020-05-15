@@ -15,7 +15,7 @@ Inc. in the United States and other countries.
 
 This repository will provide you with tips to help you pass the PE180 Red Hat Preliminary Exam in Containers, Kubernetes, and Openshift. 
 
-This repository will cover the common problems that face people during the PE180 exam like environment specific problems, limited time and how to boost your workflow in order to solve faster. It will also cover the general tips and useful information like the commands needed in the exam and some important flags that wasn't mentioned in the DO180 course.
+This repository will cover the common problems that face people during the PE180 exam like environment specific problems, limited time and how to boost your workflow. It will also cover general tips and useful information like the commands needed in the exam and some important flags that wasn't mentioned in the DO180 course.
 
 ## Table of contents
 
