@@ -84,6 +84,8 @@ In this section, I'll share how I tackled the questions and talk briefly about e
 
     The dockerfile you're supposed to edit already has lots of commands written for you. The real challenge is where to put your new commands inside this dockerfile. One thing that I have found useful were the comments written inside the dockerfile, they should roughly give you an idea about where each command should go.
 
+    One final note. Some instructions might give you the feeling that we need to use the command `WORKDIR` but **DONT** use it. The working directory is already configured for us. If you change it, chances are the dockerfile will not build successfully.
+
     After editing the dockerfile, you should attempt to build it. If the build was successful, don't test the image and make a container out of it because you will be asked to do that in question 2. It will be redundant and a waste of time if you test your image twice.
 
 4. **Question two**
@@ -94,7 +96,9 @@ In this section, I'll share how I tackled the questions and talk briefly about e
 
     In the first .sh file, you are asked to write a command that would start a container with specific flags and configurations. This should be easy as it looks like most of the stuff in the DO180 labs. After editing save the .sh file, save and exit.
 
-    In the second .sh file, you are asked to write a command that would print out the last 10 lines of the logs of a certain container. I will cover how to do that in the next section. After editing save the .sh file, save and exit.
+    In the second .sh file, you are asked to write a command that would print out the last 10 lines of the logs of a certain container. After editing save the .sh file, save and exit. To get the last 10 lines of the logs of a certain container, use the command below
+
+        sudo podman logs --tail=10 <container name>
 
     In the third .sh file, you are asked to write two commands that would run after each other. One command to stop a running container and another command to remove that container.
 
@@ -118,32 +122,80 @@ In this section, I'll share how I tackled the questions and talk briefly about e
 
 6. **Questions three & four**
 
-    These two questions are almost identical. They both will ask you to modify two separate .sh files (shell scripts). In both questions, the .sh files should create a new containers with specific flags, configurations and images that are given to us.
+    These two questions are almost identical. They both will ask you to modify two separate .sh files (shell scripts) in two different directories. In both questions, the .sh files should create new containers with specific flags, configurations and images that are given to us.
 
     Q3 asks us to run a database container, and Q4 asks us to run a wordpress container that connects to the database of Q3.
 
-    Note that you will find two Dockerfiles. One in Q3's directory and another in Q4's directory, **DO NOT ATTEMPT** to build them! They are just there to mislead you. Act as if the dockerfiles aren't there, just open the shell scripts edit them according to the instructions in the web browser and write the name of the image as given and the image will be pulled from an external registry, you don't need to build the dockerfile to get the image.
+    Note that you will find two Dockerfiles. One in Q3's directory and another in Q4's directory, **DO NOT ATTEMPT** to build them! They are just there to mislead you. Act as if the dockerfiles aren't there, just open the shell scripts and edit them according to the instructions in the web browser and write the name of the image as given and the image will be pulled from an external registry, you don't need to build the dockerfile to get the image.
 
     Also note in the `sudo podman run` command of **BOTH** questions, include the flag --pod as instructed in Q3. If you don't do so, the wordpress container will not run as it will not be able to connect to the database.
 
     Finally, when you're running the two shell scripts, make sure you run the shell script of Q3 first then the shell script of Q4.
 
-## Commands Needed
-
 ## Hidden Tricks
 
-docker copy add from absolute path
+In this section, I'll cover some of the tricks that are part of the questions above.
 
-the unzip
+1. **Dockerfiles does not copy files from outside the build context**
 
-logs
+    This means that the dockerfile will only copy files that are in the same directory as it resides. In other words, you can't use an absolute host file path in your `COPY` or `ADD` commands.
+    
+    In question 1, you are asked to copy a zip file from the host to the container in the building process. The zip file is not originally in the same directory as the dockerfile. If you use the following to copy the zip file, the build will fail
 
-pods
+        ADD /.../.../<file name>.zip <destination dir>
+        
+        or
 
+        COPY /.../.../<file name>.zip <destination dir>
 
+    Alternatively, you should copy the zip file from it's location to the same location as the dockerfile before attempting to build it and then you would use the following format since the zip file is in the build context.
+
+        ADD <file name>.zip <destination dir>
+        
+        or
+
+        COPY <file name>.zip <destination dir>
+   
+
+2. **The ADD command does not unpack zip files automatically**
+
+    We learned in the DO180 course that the `ADD` command copies and unpacks compressed files. But it turns out that it works with some of the formats only like .tar and .tar.gz but it doesn't work with .zip files.
+
+    In question 1, you are asked to copy a zip file from the host to the container in the building process. Using the `ADD` command alone will be useless and will result in the failure of the build.
+
+    To unzip the file, we should run the command `unzip` directly after copying the zip file. I personally used the `COPY` command since the `ADD` command won't grant me any extra benefits. The two commands together should look like this
+
+        COPY <file name>.zip <destination dir>
+        RUN unzip <file name>.zip        
+
+## Commands Needed
+
+Below is a list of commands that you need to be **AWARE OF** because you will **NEED THEM** to pass this exam. Make sure to check each command's manual page and see each flag and what they do. Also note that the `man` and `--help` options are available in the exam, so you don't need to memorize them. Just know them and if you forget something you could `--help` it in the exam.
+
+- **sudo podman run** | creates a container
+    - -d runs in the background
+    - --name sets the name
+    - -p expose ports to host machine
+    - -e sets env variables
+
+- **sudo podman build**| builds a dockerfile and produces an image
+
+- **sudo podman tag** | tags an image
+
+- **sudo podman save** | saves an image
+    - -o specifies the output file name
+
+- **sudo podman logs** | shows the logs
+    - --tail use it if u wanna see the last X lines of the logs
+
+- **sudo podman rm** | removes the container
+
+- **sudo podman stop** | stops the container
+
+- **sudo podman push** | pushes the image to an image registry
 
 ## Conclusion
 
-
+I hope these tips were helpful and I wish you all to pass your exams and be certified as soon as possible. Stay safe and feel free to contact me @ youssef.negm@ibm.com or catch me at slack for any inquires.
 
 
