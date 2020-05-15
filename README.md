@@ -38,11 +38,11 @@ Depending on your geo location and internet connection stability/speed, you may 
 
 
 <p align="center">
-    <img style="width: 70%" src="imgs/double_click.gif">
+    <img width="70%" src="imgs/double_click.gif">
 </p>
 
 <p align="center">
-    <img style="width: 70%" src="imgs/alt_tab.gif">
+    <img width="70%" src="imgs/alt_tab.gif">
 </p>
 
 
