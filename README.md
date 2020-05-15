@@ -1,6 +1,6 @@
 # Red Hat PE180 Exam Tips
 
-<p align="center" style="padding-top: 50px; padding-bottom: 50px;">
+<p align="center" style="margin-top: 50px; margin-bottom: 50px;">
     <img style="width: 300px;" src="imgs/redhat-logo.png">
 </p>
 
