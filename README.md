@@ -32,7 +32,7 @@ Depending on your geo location and internet connection stability/speed, you may 
 
 1. **Maximize all the windows and switch between them using alt + tab**
 
-    Switching between the terminal and the exam instructions with your mouse wastes a lot of time since the mouse is very buggy and laggy and will have some delay to follow the trail of your real mouse. I suggest you maximize all your screens and switch between them using alt + tab.
+    Switching between the terminal and the exam instructions with your mouse wastes a lot of time since the mouse is very buggy and laggy and will have some delay while following the trail of the your computer's mouse. I suggest you maximize all your screens and switch between them using alt + tab.
 
     Note that RHEL has no maximize button, so in order to maximize, you can double click the top bar of any windows and it will maximize. Check the gifs below for reference.
 
@@ -63,7 +63,7 @@ Depending on your geo location and internet connection stability/speed, you may 
 
 3. **Use [CTRL + Shift + C] and [CTRL + Shift + V] to copy and paste inside the terminal**
 
-    You should use copy and paste as much as you can in this exam. It's full of long container image names, environment variables and long dockerfile commands. The normal **CTRL + C** and **CTRL + V** works in the browser and in gedit. But in the terminal, they don't work so make sure you use **CTRL + SHIFT + C** and **CTRL + SHIFT + V**. This way you won't have to spend much time writing long commands and instructions manually. It will also save you from typos!
+    You should use copy and paste as much as you can in this exam. The exam is full of long container image names, environment variables and long dockerfile commands. The normal **CTRL + C** and **CTRL + V** works in the browser and in gedit. But in the terminal, they don't work so make sure you use **CTRL + SHIFT + C** and **CTRL + SHIFT + V**. This way you won't have to spend much time writing long commands and instructions manually. It will also save you from typos!
 
 
 ## Exam & Solving Strategy
@@ -72,7 +72,7 @@ In this section, I'll share how I tackled the questions and talk briefly about e
 
 1. **Start with Q1, Q2 & Q5 (in the same order) then attempt Q3 & Q4**
 
-    Questions 1, 2 and 5 are all regarding the same container image and they depend on each other so it's better if you finish them all at first then attempt Q3 and Q4. This will ensure that even if you didn't have enough time to finish Q3 & Q4, you would at least have finished more than 50% of the exam which will increase ur chance in succeeding.
+    Questions 1, 2 and 5 are all based on the same container image and they depend on each other so it's better if you finish them all at first then attempt Q3 and Q4. This will ensure that even if you didn't have enough time to finish Q3 & Q4, you would at least have finished more than 50% of the exam which will increase ur chance in succeeding.
 
 2. **Read the instructions from the web browser not from the shell script**
 
@@ -80,7 +80,7 @@ In this section, I'll share how I tackled the questions and talk briefly about e
 
 3. **Question one**
 
-    In this question, you will be asked to navigate to a directory that has a dockerfile. Your job will be to successfully build that dockerfile into a docker image. **BEWARE** that questions 2 and 5 depend on the correctness of this question, so if you mess up this question, your chances of passing the exam will be very low.
+    In this question, you will be asked to navigate to a directory that has a dockerfile. Your job will be to successfully build that dockerfile. **BEWARE** that questions 2 and 5 depend on the correctness of this question, so if you mess up this question, your chances of passing the exam will be very low.
 
     The dockerfile you're supposed to edit already has lots of commands written for you. The real challenge is where to put your new commands inside this dockerfile. One thing that I have found useful were the comments written inside the dockerfile, they should roughly give you an idea about where each command should go.
 
@@ -124,9 +124,9 @@ In this section, I'll share how I tackled the questions and talk briefly about e
 
     These two questions are almost identical. They both will ask you to modify two separate .sh files (shell scripts) in two different directories. In both questions, the .sh files should create new containers with specific flags, configurations and images that are given to us.
 
-    Q3 asks us to run a database container, and Q4 asks us to run a wordpress container that connects to the database of Q3.
+    Question three asks us to run a database container, and Q4 asks us to run a wordpress container that connects to the database of Q3.
 
-    Note that you will find two Dockerfiles. One in Q3's directory and another in Q4's directory, **DO NOT ATTEMPT** to build them! They are just there to mislead you. Act as if the dockerfiles aren't there, just open the shell scripts and edit them according to the instructions in the web browser and write the name of the image as given and the image will be pulled from an external registry, you don't need to build the dockerfile to get the image.
+    Note that you will find two Dockerfiles. One in Q3's directory and another in Q4's directory, **DO NOT ATTEMPT** to build them! They are just there to mislead you. Act as if the dockerfiles aren't there, just open the shell scripts and edit them according to the instructions in the web browser and write the name of the image as given and the image will be pulled from an external registry, you don't need to build the dockerfile yourself.
 
     Also note in the `sudo podman run` command of **BOTH** questions, include the flag --pod as instructed in Q3. If you don't do so, the wordpress container will not run as it will not be able to connect to the database.
 
@@ -155,11 +155,16 @@ In this section, I'll cover some of the tricks that are part of the questions ab
         or
 
         COPY <file name>.zip <destination dir>
+
+    
+    You can either copy the zip file from the GUI window or use the terminal, in the terminal you could use the following command to copy the zip file
+
+        cp /.../.../<zip file name>.zip <destination>
    
 
 2. **The ADD command does not unpack zip files automatically**
 
-    We learned in the DO180 course that the `ADD` command copies and unpacks compressed files. But it turns out that it works with some of the formats only like .tar and .tar.gz but it doesn't work with .zip files.
+    We learned in the DO180 course that the `ADD` command copies and unpacks compressed files. But it turns out that it doesn't support the zip format. It works with other formats like .tar and .tar.gz but it doesn't work with .zip files.
 
     In question 1, you are asked to copy a zip file from the host to the container in the building process. Using the `ADD` command alone will be useless and will result in the failure of the build.
 
