@@ -34,16 +34,16 @@ Depending on your geo location and internet connection stability/speed, you may 
 
     Switching between the terminal and the exam instructions with your mouse wastes a lot of time since the mouse is very buggy and laggy and will have some delay to follow the trail of your real mouse. I suggest you maximize all your screens and switch between them using alt + tab.
 
-    Note that RHEL has no maximize button, so in order to maximize, you can double click the top bar of any windows and it will maximize.
+    Note that RHEL has no maximize button, so in order to maximize, you can double click the top bar of any windows and it will maximize. Check the gifs below for reference.
 
-<div style="display: flex; flex-direction: row;">
-<p style="flex: 1; padding: 5px;" align="center">
-    <img src="imgs/img_1.gif">
+
+<p align="center">
+    <img style="width: 70%" src="imgs/img_1.gif">
 </p>
-<p style="flex: 1; padding: 5px;" align="center">
-    <img src="imgs/img_2.gif">
+
+<p align="center">
+    <img style="width: 70%" src="imgs/img_2.gif">
 </p>
-</div>
 
 
 
