@@ -8,12 +8,14 @@
 
 <br>
 
-> ***Disclaimer:*** This is a personal github repository and **IS NOT** affiliated with Red Hat in any way. All the information provided here are from my personal experience. 
+> ***Disclaimer:*** This is a personal github repository and **IS NOT** affiliated with Red Hat in any way. All the information provided here are from my personal experience. The red hat logo is a registered trademark of Red Hat,
+Inc. in the United States and other countries. 
+
+> ***Note:*** This repository was written on the 15th of May 2020. The contents/format of the exam might have changed by the time you are reading this now. Use these tips at your own risk.
 
 This repository will provide you with tips and tricks to help you pass the PE180 Red Hat Preliminary Exam in Containers, Kubernetes, and Openshift. 
 
 This repository will cover the common problems that face people during the PE180 exam like environment specific problems, limited time and how to boost your workflow in order to solve faster. It will also cover the general tips and tricks and useful information like the commands needed in the exam and some important flags that wasn't mentioned in the DO180 course.
-
 
 ## Table of contents
 
